@@ -42,6 +42,7 @@ services:
 ###### Voir les logs 
 ```
 docker exec -it duniter_wot-wizard_1 tail -f /etc/wotWizard/rsrc/duniter/log.txt
+docker exec -it duniter_wot-wizard_1 echo {WotWizardListPerm} > tt.json
 ```
 
 ======
