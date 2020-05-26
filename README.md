@@ -28,7 +28,7 @@ services:
     labels:
       io.rancher.container.network: 'true'
   wot-wizard:
-    image: fabwice/docker-wot-wizard:v4.1.2
+    image: fabwice/docker-wot-wizard:v4.2.0
     restart: unless-stopped
     hostname: wot-wizard.fabwice.com
     ports:
