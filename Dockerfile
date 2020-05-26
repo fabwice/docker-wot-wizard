@@ -2,7 +2,7 @@ FROM ubuntu:latest
   
 MAINTAINER Fabwice <wotWizard@fabwice.com>
 
-ARG WOT_WIZARD_VERSION=4.1.2
+ARG WOT_WIZARD_VERSION=4.2.0
  
 VOLUME /var/lib/duniter
 
