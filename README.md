@@ -17,24 +17,35 @@ version: '3'
 
 services:
   duniter:
-    image: fabwice/docker-duniter-ts:v1.7.21
+    image: fabwice/docker-duniter-ts:latest
     restart: unless-stopped
     hostname: duniter.fabwice.com
     ports:
-      - 9220:9220
-      - 20901:20901
+      - 127.0.0.1:9220:9220
+      - 127.0.0.1:10901:10901
+      - 127.0.0.1:20901:20901
+    networks:
+      duniter:
+        ipv4_address: 175.28.1.1
     volumes:
       - '/home/duniter/scr:/var/lib/duniter'      
-    labels:
-      io.rancher.container.network: 'true'
   wot-wizard:
-    image: fabwice/docker-wot-wizard:v4.2.0
+    image: fabwice/docker-wot-wizard:latest
     restart: unless-stopped
     hostname: wot-wizard.fabwice.com
     ports:
-      - 9222:9222
+      - 127.0.0.1:9222:9222
+    networks:
+      duniter:
+        ipv4_address: 175.28.1.2
     volumes:
       - '/home/duniter/scr:/var/lib/duniter'
+networks:
+  duniter:
+    ipam:
+      driver: default
+      config:
+         -  subnet: 175.28.0.0/16
 ```
 
 ======
